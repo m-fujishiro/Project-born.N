@@ -1,13 +1,13 @@
-//-------‚±‚±‚©‚ç
+//-------ã“ã“ã‹ã‚‰
 #include <stdio.h>
 #include <stdlib.h> 
 #include <time.h>  
 #include <string.h>
 #include <conio.h>
 
-void dic(int);//dictionary(«‘)
-int div_fun(char str_user[128]);//divergence(•ªŠò)‚Ìfunction(ŠÖ”)
-void vgan(char str_user[128]);//vavue answer:¶•Ô–
+void dic(int);//dictionary(è¾æ›¸)
+int div_fun(char str_user[128]);//divergence(åˆ†å²)ã®function(é–¢æ•°)
+void vgan(char str_user[128]);//vavue answer:ç”Ÿè¿”äº‹
 void msc(int);//my scan
 void ppak(); //Please pless any key
 
@@ -15,21 +15,21 @@ int main()
 {
 	int div = 0;
 
-	/*—”‰Šú‰»*/
+	/*ä¹±æ•°åˆæœŸåŒ–*/
 	unsigned int now = (unsigned int)time(0);
 	srand(now);rand(); rand(); rand(); rand(); rand();
 
 	puts("Please type in within 125 characters.");
-	/*ƒ†[ƒU[‚ª“ü—Í*/
+	/*ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒå…¥åŠ›*/
 	char str_user[128] = {0};
-	/*©ì‚Ì“ü—ÍŠÖ”,Šù‘¶‚ÌŠÖ”‚ª‚æ‚­‚í‚©‚ç‚È‚©‚Á‚½‚èg‚¢‚Ã‚ç‚©‚Á‚½‚Ì‚Åì‚Á‚Ä‚İ‚½*/
+	/*è‡ªä½œã®å…¥åŠ›é–¢æ•°,æ—¢å­˜ã®é–¢æ•°ãŒã‚ˆãã‚ã‹ã‚‰ãªã‹ã£ãŸã‚Šä½¿ã„ã¥ã‚‰ã‹ã£ãŸã®ã§ä½œã£ã¦ã¿ãŸ*/
 	msc(125,str_user);
 
-	/*ƒƒCƒ“‚Ìˆ—*/
+	/*ãƒ¡ã‚¤ãƒ³ã®å‡¦ç†*/
 	div = div_fun(str_user);
 	dic(div,str_user);
 
-	/*‰½ŒÌ‚©‚±‚êˆÈ~‚Ì‚İ‚ªŒJ‚è•Ô‚³‚ê‚éê‡‚ ‚è,‹O“¹‚ğ’Ç‚Á‚Ä‚¢‚­‚Æ•’Ê‚É“®‚­*/
+	/*ä½•æ•…ã‹ã“ã‚Œä»¥é™ã®ã¿ãŒç¹°ã‚Šè¿”ã•ã‚Œã‚‹å ´åˆã‚ã‚Š,è»Œé“ã‚’è¿½ã£ã¦ã„ãã¨æ™®é€šã«å‹•ã*/
 	printf("Please press any key...\n");
 	ppak();
 }
@@ -54,7 +54,7 @@ int div_fun(char str_user[128])
 
 	};
 
-	/*•¶š—ñ‚Æˆê’v‚·‚é‚©‚Ì”»’è*/
+	/*æ–‡å­—åˆ—ã¨ä¸€è‡´ã™ã‚‹ã‹ã®åˆ¤å®š*/
 	for (j = 0; j < 10;j++)
 	{
 		if (div != 0)break;
@@ -67,13 +67,13 @@ int div_fun(char str_user[128])
 				if (str_user[i + 1] != dicN[j][cnt])cnt = 0;
 			}
 		}
-	}return -1; //“–‚Ä‚Í‚Ü‚ç‚È‚©‚Á‚½
+	}return -1; //å½“ã¦ã¯ã¾ã‚‰ãªã‹ã£ãŸ
 }
 void dic(int div,char str_user[128])
 {
 	int fun = 0,i = 0, cnt = 0;
 
-	//‚¨‚¤‚Ş•Ô‚µ‚·‚é‚à‚Ì
+	//ãŠã†ã‚€è¿”ã—ã™ã‚‹ã‚‚ã®
 	char dicN[5][62] = {
 		"Good morning\n",
 		"Hello\n",
@@ -81,7 +81,7 @@ void dic(int div,char str_user[128])
 		"Good night\n",
 		"I'm fine\n"
 	};
-	//‚±‚Ì’†‚©‚çƒ‰ƒ“ƒ_ƒ€‚Å•\¦‚·‚é
+	//ã“ã®ä¸­ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã§è¡¨ç¤ºã™ã‚‹
 	char dicN2[5][15] = {
 		"Yo\n",
 		"What's up!\n",
@@ -90,16 +90,16 @@ void dic(int div,char str_user[128])
 		"Hi\n",
 	};
 
-	/*‚¨‚¤‚Ş•Ô‚µ*/
+	/*ãŠã†ã‚€è¿”ã—*/
 	if ((div >= 0)&&(div < 5))	{printf("%s\n", dicN[div]);main();}
-	/*ƒ‰ƒ“ƒ_ƒ€o—Í*/
+	/*ãƒ©ãƒ³ãƒ€ãƒ å‡ºåŠ›*/
 	else if(div >= 0) {
 		fun = rand() % 5;
 		printf("%s\n",dicN2[fun]);
 		main();
 	}
 
-	/*“–‚Ä‚Í‚Ü‚ç‚È‚©‚Á‚½ê‡AŸ‚Ìˆ—‚Ö*/
+	/*å½“ã¦ã¯ã¾ã‚‰ãªã‹ã£ãŸå ´åˆã€æ¬¡ã®å‡¦ç†ã¸*/
 	else vgan(str_user);
 }
 
@@ -108,10 +108,10 @@ void vgan(char str_user[128])
 {	
 	int div = 0, i = 0, cnt = 0;
 
-	/*—”‚ğì‚é*/
+	/*ä¹±æ•°ã‚’ä½œã‚‹*/
 	div = rand() % 6;
 
-	/*¶•Ô–‚ÌƒoƒŠƒG[ƒVƒ‡ƒ“*/
+	/*ç”Ÿè¿”äº‹ã®ãƒãƒªã‚¨ãƒ¼ã‚·ãƒ§ãƒ³*/
 	char dicN[][14] = {
 		"oh!\n",
 		"hmm...\n",
@@ -124,7 +124,7 @@ void vgan(char str_user[128])
 
 	char dicNplus[] = "See you.\n";
 
-	/*I—¹ƒRƒ}ƒ“ƒh*/
+	/*çµ‚äº†ã‚³ãƒãƒ³ãƒ‰*/
 	char dicN2[] = "bye";
 	
 	for (i = 0;i < 128;i++)
@@ -146,42 +146,42 @@ void msc(int length,char y[])
 {
 #include <conio.h>
 #include <string.h>
-	int i=0;//Œ»İ•\¦‚³‚ê‚Ä‚¢‚é•¶š”
+	int i=0;//ç¾åœ¨è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹æ–‡å­—æ•°
     
-	char x[32767] = {0};//•¶š—ñ
+	char x[32767] = {0};//æ–‡å­—åˆ—
 
 	for(i = 0;i < length;i++)
 	{
 		x[i] = _getch();
-		if((x[i] >= ' ')&&(x[i] <= '~')) //•’Ê‚Ì”¼Šp•¶š
+		if((x[i] >= ' ')&&(x[i] <= '~')) //æ™®é€šã®åŠè§’æ–‡å­—
 		{
 			printf("%c",x[i]);
 			y[i] = x[i];
 			if(x[i] == '.')break;
 		}
-		else if(x[i] == '\b')if(i > 0){printf("\b \b");i -= 2;}else i = -1; //BackSpaceKey‚Ì‹@”\‚ğ’Ç‰Á
+		else if(x[i] == '\b')if(i > 0){printf("\b \b");i -= 2;}else i = -1; //BackSpaceKeyã®æ©Ÿèƒ½ã‚’è¿½åŠ 
 		
 		else if (x[i] == 13)break; //EnterKey
 
-		else i--;//o—Í‚³‚ê‚Ä‚¢‚È‚¢‚ª‚P‘«‚³‚ê‚Ä‚µ‚Ü‚¤‚Ì‚Å}0‚É‚·‚é
+		else i--;//å‡ºåŠ›ã•ã‚Œã¦ã„ãªã„ãŒï¼‘è¶³ã•ã‚Œã¦ã—ã¾ã†ã®ã§Â±0ã«ã™ã‚‹
 	}
 	putchar('\n');
 }
 
 void ppak()
 {
-	//’P‘Ì‚Å‚à“®‚­‚æ‚¤‚É
+	//å˜ä½“ã§ã‚‚å‹•ãã‚ˆã†ã«
 #include <conio.h>
 
-	//ƒL[ƒ{[ƒh‚É“ü‚Á‚Ä‚¢‚é•¶š—ñ‚Ì‰Šú‰»
+	//ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã«å…¥ã£ã¦ã„ã‚‹æ–‡å­—åˆ—ã®åˆæœŸåŒ–
 	while (1) {
 		if (_kbhit()) { _getch(); }
 		else break;
 	};
 
-	//ƒL[“ü—Í‚ª‚ ‚Á‚½‚çƒ‹[ƒv‚ğ”²‚¯‚é
+	//ã‚­ãƒ¼å…¥åŠ›ãŒã‚ã£ãŸã‚‰ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã‚‹
 	while (1) {
 		if (_kbhit()) {_getch(); break;}
 	};
 }
-//‚±‚±‚Ü‚Å
+//ã“ã“ã¾ã§
